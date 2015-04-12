@@ -9,10 +9,10 @@ class User
     private $db;
     private $user_id;
 
-    private $db_host = "mysql.hostinger.ru";
-    private $db_name = "u568080489_mybd";
-    private $db_user = "u568080489_admin";
-    private $db_pass = "qwerty123";
+    private $db_host = "localhost";
+    private $db_name = "testdb";
+    private $db_user = "testdb";
+    private $db_pass = "testdb";
 
     private $is_authorized = false;
 
@@ -35,36 +35,18 @@ class User
         return false;
     }
 
-    public function passwordHash($password, $hashss = 0)
+    public function passwordHash($password, $salt = null, $iterations = 10)
     {
-    	try{
-	    /**
-		$salt || $salt = uniqid();
-		$hash = md5(md5($password . md5(sha1($salt))));
-	
-		for ($i = 0; $i < $iterations; ++$i) {
-		    $hash = md5(md5(sha1($hash)));
-		}
-	    **/
-		if($hashss == 0)
-		{
-			$hash = password_hash($password, PASSWORD_DEFAULT);
-		        //return array('hash' => $hash, 'salt' => $salt);
-			return $hash;
-		}
-		else 
-		{
-			if (password_verify($password, $hash)) return true;
-			else throw new \Exception("password verify false");
-		}
-     	} catch (\PDOException $e) {
-            $this->db->close();
-            echo "passwordHash error: " . $e->getMessage();
-            die();
+        $salt || $salt = uniqid();
+        $hash = md5(md5($password . md5(sha1($salt))));
+
+        for ($i = 0; $i < $iterations; ++$i) {
+            $hash = md5(md5(sha1($hash)));
         }
-     	
+
+        return array('hash' => $hash, 'salt' => $salt);
     }
-    /**
+
     public function getSalt($username) {
         $query = "select salt from users where username = :username limit 1";
         $sth = $this->db->prepare($query);
@@ -79,30 +61,27 @@ class User
         }
         return $row["salt"];
     }
-    **/
 
     public function authorize($username, $password, $remember=false)
     {
-        $query = "select id, username, password from users where
-            username = :username";
+        $query = "select id, username from users where
+            username = :username and password = :password limit 1";
         $sth = $this->db->prepare($query);
-     /**  $salt = $this->getSalt($username);
+        $salt = $this->getSalt($username);
 
         if (!$salt) {
             return false;
         }
-     **/
-     //   $hashes = $this->passwordHash($password);
+
+        $hashes = $this->passwordHash($password, $salt);
         $sth->execute(
             array(
                 ":username" => $username,
-                //":password" => $hashes['hash'],
-                //":password" => $hashes,
+                ":password" => $hashes['hash'],
             )
         );
         $this->user = $sth->fetch();
-        $hashes = $this->passwordHash($password, $this->user['password']);
-        if(!$hashes) return 0;
+        
         if (!$this->user) {
             $this->is_authorized = false;
         } else {
@@ -139,16 +118,14 @@ class User
     }
 
     public function create($username, $password) {
-    /**    $user_exists = $this->getSalt($username);
+        $user_exists = $this->getSalt($username);
 
         if ($user_exists) {
             throw new \Exception("User exists: " . $username, 1);
         }
-    **/
-     
-    //   $query = "insert into users (username, password, salt) values (:username, :password, :salt)";
-     	 $query = "insert into users (username, password)
-            values (:username, :password)";
+
+        $query = "insert into users (username, password, salt)
+            values (:username, :password, :salt)";
         $hashes = $this->passwordHash($password);
         $sth = $this->db->prepare($query);
 
@@ -157,9 +134,8 @@ class User
             $result = $sth->execute(
                 array(
                     ':username' => $username,
-                //    ':password' => $hashes['hash'],
-           	     ':password' => $hashes,
-                //    ':salt' => $hashes['salt'],
+                    ':password' => $hashes['hash'],
+                    ':salt' => $hashes['salt'],
                 )
             );
             $this->db->commit();
