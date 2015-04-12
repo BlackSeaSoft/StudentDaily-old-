@@ -99,7 +99,7 @@ function registration($login, $password) {
 	
 	// Если такого пользователя нет, регистрируем его
 	// Пишем строку запроса
-	$hash = password_hash($passwod, PASSWORD_DEFAULT);
+	$hash = password_hash($password, PASSWORD_DEFAULT);
 	$sql = "INSERT INTO `users` 
 			(`id`,`login`,`password`,`hash`) VALUES 
 			(NULL, '" . $login . "','" . $password . "','".$hash."')";
