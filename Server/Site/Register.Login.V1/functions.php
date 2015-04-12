@@ -152,7 +152,7 @@ function authorization($login, $password) {
 	echo "good";
 	}
 	else {
-	$error = 'Неправильные данные'.$password;
+	$error = 'Неправильные данные';
 	return $error;
 	}
 	

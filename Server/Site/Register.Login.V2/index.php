@@ -14,8 +14,8 @@ require_once 'classes/Auth.class.php';
     <meta charset="utf-8">
     <title>PHP Ajax Authorization</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
@@ -26,7 +26,7 @@ require_once 'classes/Auth.class.php';
     
       <h1>Your are welcome!</h1>
 
-      <form class="ajax" method="post" action="./ajax.php">
+      <form class="ajax" method="post" action="ajax.php">
           <input type="hidden" name="act" value="logout">
           <div class="form-actions">
               <button class="btn btn-large btn-primary" type="submit">Logout</button>
@@ -35,7 +35,7 @@ require_once 'classes/Auth.class.php';
 
       <?php else: ?>
 
-      <form class="form-signin ajax" method="post" action="./ajax.php">
+      <form class="form-signin ajax" method="post" action="ajax.php">
         <div class="main-error alert alert-error hide"></div>
 
         <h2 class="form-signin-heading">Please sign in</h2>
@@ -48,7 +48,7 @@ require_once 'classes/Auth.class.php';
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
     
         <div class="alert alert-info" style="margin-top:15px;">
-            <p>Not have an account? <a href="/register.php">Register it.</a>
+            <p>Not have an account? <a href="register.php">Register it.</a>
         </div>
       </form>
 
@@ -56,9 +56,9 @@ require_once 'classes/Auth.class.php';
 
     </div> <!-- /container -->
 
-    <script src="./vendor/jquery-2.0.3.min.js"></script>
-    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="./js/ajax-form.js"></script>
+    <script src="vendor/jquery-2.0.3.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/ajax-form.js"></script>
 
   </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 
-include './classes/Auth.class.php';
-include './classes/AjaxRequest.class.php';
+include 'classes/Auth.class.php';
+include 'classes/AjaxRequest.class.php';
 
 if (!empty($_COOKIE['sid'])) {
     // check session id in cookies
