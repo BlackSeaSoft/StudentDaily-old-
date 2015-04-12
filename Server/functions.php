@@ -145,9 +145,16 @@ function authorization($login, $password) {
 	
 	$sql = "SELECT `hash` FROM `users` WHERE `login`='".$login."' AND `password`='".$password."'";
 	// Выполняем запрос
-	$password = "password";
-echo $hash = password_hash($password, PASSWORD_DEFAULT);
-var_dump(password_verify($password, $hash));
+	$query = $connection->query($sql);
+	$row = db_result_to_array($query, 1);
+	$hash = $row[0][0];
+	if (password_verify($password, $hash)) { // ERROR - всегда ложь 
+	echo "good";
+	}
+	else {
+	$error = 'Неправильные данные'.$password;
+	return $error;
+	}
 	
 	// Если пользователь существует, запускаем сессию
 	session_start();
