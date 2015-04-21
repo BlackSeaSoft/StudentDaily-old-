@@ -1,0 +1,220 @@
+body {
+background-image: url(../img/background/witewall_3.png);
+}
+
+html, body{
+overflow:  hidden;
+}
+.element-menu{
+/*
+	background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, #2B97C2),
+	color-stop(1, #3598B3)
+);
+background-image: -o-linear-gradient(bottom, #2B97C2 0%, #3598B3 100%);
+background-image: -moz-linear-gradient(bottom, #2B97C2 0%, #3598B3 100%);
+background-image: -webkit-linear-gradient(bottom, #2B97C2 0%, #3598B3 100%);
+background-image: -ms-linear-gradient(bottom, #2B97C2 0%, #3598B3 100%);
+background-image: linear-gradient(to bottom, #2B97C2 0%, #3598B3 100%);
+*/
+}
+
+.element-menu img:hover{
+	cursor: pointer;
+}
+
+/*
+.nameElement-menu{
+	text-align: center;
+	padding: 2px;
+	border-bottom: 1px solid #000;
+	padding-left: 0;
+	padding-right: o;
+}
+
+.iconElement-menu{
+	text-align: center;
+	color: #2F4F4F;
+}
+*/
+
+/*
+.myButton {
+	-moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
+	-webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
+	background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
+	background-color:#7892c2;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+*/
+
+.menu-nav{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 2px;
+	margin-bottom: 55px;
+	background: url(../img/background/menuBG.png);
+/*
+	background: -webkit-linear-gradient(-90deg, #64a7b8 0, #21658c 100%);
+	background: -moz-linear-gradient(180deg, #64a7b8 0, #21658c 100%);
+	background: linear-gradient(180deg, #64a7b8 0, #21658c 100%);
+	background-position: 50% 50%;
+	-webkit-background-origin: padding-box;
+	background-origin: padding-box;
+	-webkit-background-clip: border-box;
+	background-clip: border-box;
+	-webkit-background-size: auto auto;
+	background-size: auto auto;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+*/
+}
+
+.menu-nav a{
+	color: white;
+	font-size: 22px;
+	display: block;
+	margin-left: 15px;
+	margin-right: 15px;
+	float: left;
+	text-decoration: none;
+}
+
+.active-link{
+	border-bottom: 1px solid white;
+    margin-bottom: -5px;
+}
+
+.menu-nav a:link {
+	color: ffffff; /* Цвет ссылок */
+	text-decoration: none;
+}
+.menu-nav a:visited {
+	color: ffffff; /* Цвет посещенных ссылок */
+	text-decoration: none;
+}
+.menu-nav a:active {
+	color: ffffff; /* Цвет активной ссылки */
+	border-bottom: 1px solid white;
+    margin-bottom: -5px;
+}
+
+.menu-nav a:hover {
+	color: ffffff; /* Цвет активной ссылки */
+	border-bottom: 1px solid white;
+    margin-bottom: -5px;
+}
+
+.menu-left{
+	margin-left: 0;
+	margin-right: 15px;
+}
+
+.menu-right{
+	margin-right: 0;
+	margin-left: 15px;
+}
+
+.opacity img {
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+.opacity img:hover {
+  -webkit-filter: contrast(185%);
+}
+
+.LogOut {
+	-moz-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+	box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #637aad), color-stop(1, #5972a7));
+	background:-moz-linear-gradient(top, #637aad 5%, #5972a7 100%);
+	background:-webkit-linear-gradient(top, #637aad 5%, #5972a7 100%);
+	background:-o-linear-gradient(top, #637aad 5%, #5972a7 100%);
+	background:-ms-linear-gradient(top, #637aad 5%, #5972a7 100%);
+	background:linear-gradient(to bottom, #637aad 5%, #5972a7 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#637aad', endColorstr='#5972a7',GradientType=0);
+	background-color:#637aad;
+	border:1px solid #314179;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:4px 7px;
+	text-decoration:none;
+}
+.LogOut:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5972a7), color-stop(1, #637aad));
+	background:-moz-linear-gradient(top, #5972a7 5%, #637aad 100%);
+	background:-webkit-linear-gradient(top, #5972a7 5%, #637aad 100%);
+	background:-o-linear-gradient(top, #5972a7 5%, #637aad 100%);
+	background:-ms-linear-gradient(top, #5972a7 5%, #637aad 100%);
+	background:linear-gradient(to bottom, #5972a7 5%, #637aad 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5972a7', endColorstr='#637aad',GradientType=0);
+	background-color:#5972a7;
+}
+.LogOut:active {
+	position:relative;
+	top:1px;
+}
+
+.img-rounded{
+	-webkit-box-shadow: 3px 3px 18px 3px rgba(0,150,255,0.91) ;
+	box-shadow: 3px 3px 18px 3px rgba(0,150,255,0.91) ;
+	border: 1px solid rgba(55,37,188,1);
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
